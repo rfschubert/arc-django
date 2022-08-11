@@ -8,7 +8,6 @@ tasks:
       pip install --upgrade pip wheel setuptools
       pip install -r requirements.txt
       source .env.dev
-      docker-compose up db -d
       python manage.py migrate
     command: |
       source venv/bin/activate
@@ -18,9 +17,6 @@ ports:
   - port: 8000
     visibility: private
     onOpen: open-preview
-
-  - port: 5432
-    onOpen: ignore
 
 vscode:
   extensions:
